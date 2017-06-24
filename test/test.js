@@ -17,3 +17,27 @@ describe('index page', function() {
 		});
 	});
 });
+
+describe('search page', function() {
+	it('should return proper status and html', function(done) {
+		chai.request(app)
+		.get('/search')
+		.end(function(err, res) {
+			res.should.have.status(200);
+			res.should.be.html;
+			done();
+		});
+	});
+})
+
+describe('result page', function() {
+	it('should return proper status and html', function(done) {
+		chai.request(app)
+		.get('/result')
+		.end(function(err, res) {
+			res.should.have.status(200);
+			res.should.be.html;
+			done();
+		});
+	});
+})
