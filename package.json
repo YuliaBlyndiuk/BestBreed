@@ -1,8 +1,19 @@
 {
-  "name": "public",
+  "name": "best-breed",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  },
   "scripts": {
     "test": "mocha",
     "start": "node server.js"
