@@ -13,19 +13,4 @@ app.get('/result', function(req, res) {
 	res.send('result page');
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {app};
