@@ -1,16 +1,60 @@
-function listenerWatcher() {
-	$('#startButton').on('click', function(event) {
-		
+// Render => User Action => Change State => Render ...
+
+// The state describes what's going on in the app.
+// Whenever we make a change to the UI, we should first
+// describe it in the state.
+var state = {
+	page: 'welcome',
+	filters: []
+}
+
+function showPage(page) {
+	state.page = page;
+}
+
+// 1: What if filter is already selected? Implement toggle behavior.
+function selectFilter(filter) {
+	state.filters.push(filter);
+}
+
+function performSearch(filters) {
+	// Can use these in a request to the server using jQuery AJAX methods.
+	// Review jQuery AJAX.
+	alert(filters);
+}
+
+function render() {
+	console.log(state);
+
+	$('.page').removeClass('current');
+	$('.page#' + state.page).addClass('current');
+
+	state.filters.forEach(function(filter) {
+		$(`#filters li[data-name=${ filter }]`).addClass('selected');
 	})
 }
 
+function addListeners() {
+	$('#startButton').click(function() {
+		showPage('search');
+		render();
+	})
 
+	$('#filters li').click(function() {
+		var filterName = $(this).data('name');
+		selectFilter(filterName);
+		render();
+	})
 
-//event listener
+	$('#searchButton').click(function() {
+		performSearch(state.filters);
+	})
+}
+
 $(function() {
-	listenerWatcher();
-});
-
+	render();
+	addListeners();
+})
 
 //breed list data
 // var breedList = {
