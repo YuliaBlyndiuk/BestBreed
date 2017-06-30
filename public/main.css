@@ -5,3 +5,7 @@
 .page.current {
 	display: block;
 }
+
+#filters li.selected {
+	color: blue;
+}
