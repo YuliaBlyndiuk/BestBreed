@@ -7,8 +7,16 @@ function showPage(page) {
 	state.page = page;
 }
 
+
+// 1: What if filter is already selected? Implement toggle behavior.
 function selectFilter(filter) {
 	state.filters.push(filter);
+}
+
+function performSearch(filters) {
+	// Can use these in a request to the server using jQuery AJAX methods.
+ +	// Review jQuery AJAX.
+ 	alert(filters);
 }
 
 function render() {
@@ -30,6 +38,10 @@ function addListeners() {
 		var filterName = $(this).data('name');
 		selectFilter(filterName);
 		render();
+	})
+
+	$('#searchButton').click(function() {
+		performSearch(state.filters);
 	})
 }
 
