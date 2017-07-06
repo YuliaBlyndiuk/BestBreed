@@ -9,3 +9,7 @@
 #filters li.selected {
 	color: blue;
 }
+
+#filters li.selected1 {
+	color: red;
+}

@@ -7,15 +7,28 @@ function showPage(page) {
 	state.page = page;
 }
 
-
-// 1: What if filter is already selected? Implement toggle behavior.
 function selectFilter(filter) {
-	state.filters.push(filter);
+  function findElement(element) {
+    return element === filter;
+  }
+  
+  var found =  state.filters.find(findElement)
+  if (!found) { 
+    state.filters.push(filter) 
+    $(`#filters li[data-name=${ filter }]`).addClass('selected');
+  } 
+  else {
+    var index = state.filters.indexOf(filter)
+        state.filters.splice(index, 1)
+        $(`#filters li[data-name=${ filter }]`).removeClass('selected');
+  }
+  
+  console.log(state.filters);
 }
 
 function performSearch(filters) {
 	// Can use these in a request to the server using jQuery AJAX methods.
- +	// Review jQuery AJAX.
+ 	// Review jQuery AJAX.
  	alert(filters);
 }
 
