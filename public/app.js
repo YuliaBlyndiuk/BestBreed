@@ -1,7 +1,24 @@
 var state = {
 	page: 'welcome',
-	filters: []
-}
+	filters: [],
+	dogBreeds: [
+	{
+		"id": "1",
+		"breed": "German Shepherd",
+		"filter": "smart"
+	},
+	{
+		"id": "2",
+		"breed": "Golden Retriever",
+		"filter": "fluffy"
+	},
+	{
+		"id": "3",
+		"breed": "Standard Poodle",
+		"filter": "cute"
+	}
+	]
+};
 
 function showPage(page) {
 	state.page = page;
@@ -22,14 +39,18 @@ function selectFilter(filter) {
         state.filters.splice(index, 1)
         $(`#filters li[data-name=${ filter }]`).removeClass('selected');
   }
-  
-  console.log(state.filters);
 }
 
 function performSearch(filters) {
 	// Can use these in a request to the server using jQuery AJAX methods.
  	// Review jQuery AJAX.
  	alert(filters);
+}
+
+function getAndDisplayAll(argument){
+	for (var i = 0; i< state.dogBreeds.length; i++) {
+		$('body').append('<div>' + state.dogBreeds[i].breed + '</div>');
+	}
 }
 
 function render() {
@@ -55,6 +76,13 @@ function addListeners() {
 
 	$('#searchButton').click(function() {
 		performSearch(state.filters);
+	})
+
+	$('#searchAll').click(function() {
+		showPage('results');
+		getAndDisplayAll(state);
+		render();
+		
 	})
 }
 
