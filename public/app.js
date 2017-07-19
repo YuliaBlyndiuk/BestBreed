@@ -5,17 +5,17 @@ var state = {
 	{
 		"id": "1",
 		"breed": "German Shepherd",
-		"filter": "smart"
+		"filters": ["smart", "large"]
 	},
 	{
 		"id": "2",
 		"breed": "Golden Retriever",
-		"filter": "fluffy"
+		"filters": ["fluffy", "outgoing"]
 	},
 	{
 		"id": "3",
 		"breed": "Standard Poodle",
-		"filter": "cute"
+		"filters": ["cute", "non-alergic"]
 	}
 	]
 };
@@ -41,11 +41,14 @@ function selectFilter(filter) {
   }
 }
 
-function performSearch(filters) {
-	// Can use these in a request to the server using jQuery AJAX methods.
- 	// Review jQuery AJAX.
- 	alert(filters);
-}
+// function performSearch(filters) {
+// 	// Can use these in a request to the server using jQuery AJAX methods.
+//  	// Review jQuery AJAX.
+//  	// alert(filters);
+//  	if (state.filters[i] === state.dogBreeds[i].filters[i]) {
+//  		$('body').append('<div>' + this + '</div>');
+//  	}
+// }
 
 function getAndDisplayAll(argument){
 	for (var i = 0; i< state.dogBreeds.length; i++) {
@@ -74,9 +77,9 @@ function addListeners() {
 		render();
 	})
 
-	$('#searchButton').click(function() {
-		performSearch(state.filters);
-	})
+	// $('#searchButton').click(function() {
+	// 	performSearch(state.filters);
+	// })
 
 	$('#searchAll').click(function() {
 		showPage('results');
