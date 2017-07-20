@@ -24,8 +24,13 @@ module.exports = function(app, passport) {
 		res.render('signup.ejs', {message: req.flash('signupMessage')});
 	});
 
-	//process the sign up form
-	//app.post('/signup', do all our passport stuff here);
+	 // process the login form
+    app.post('/login', passport.authenticate('local-login', {
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/login', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
+
 
 	//=====Profile section====
 	//using middleware to verify login
@@ -40,6 +45,10 @@ module.exports = function(app, passport) {
 		req.logout();
 		res.redirect('/');
 	});
+
+	app.get('/welcome', function(req, res) {
+		res.render('index.html');
+	})
 };
 
 //route middleware to ensure a user is logged in

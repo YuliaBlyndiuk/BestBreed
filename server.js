@@ -42,17 +42,16 @@ require('./app/routes.js')(app, passport); //load our routes and pass in our app
 app.listen(port);
 console.log('using ' + port);
 
-// app.use(express.static('public'));
-// app.listen(process.env.PORT || 8080);
+app.use(express.static('public'));
 
-// app.get('/search', function(req, res) {
-// 	res.status(200);
-// 	res.send('search page');
-// })
+app.get('/search', function(req, res) {
+	res.status(200);
+	res.send('search page');
+})
 
-// app.get('/result', function(req, res) {
-// 	res.status(200);
-// 	res.send('result page');
-// })
+app.get('/result', function(req, res) {
+	res.status(200);
+	res.send('result page');
+})
 
-// module.exports = {app};
+module.exports = {app};
