@@ -1,0 +1,16 @@
+/*.page {
+	display: none;
+}
+
+.page.current {
+	display: block;
+}
+
+#filters li.selected {
+	color: blue;
+}
+
+#filters li.selected1 {
+	color: red;
+}*/
+

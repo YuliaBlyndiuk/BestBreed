@@ -1,15 +1,31 @@
-.page {
-	display: none;
+h1 {
+	text-align: center;
 }
 
-.page.current {
-	display: block;
+.textSection {
+	margin: 10px;
+	border: 2px solid black;
+	overflow: auto;
+	text-align: justify;
 }
 
-#filters li.selected {
-	color: blue;
+button {
+	margin: 15px;
+	padding: 10px;
 }
 
-#filters li.selected1 {
-	color: red;
+p {
+	padding: 15px;
+	/*display: inline-block;*/
+}
+
+.img {
+	margin: 15px;
+	width: 25%;
+}
+
+@media screen and (max-width: 700px){
+	.img {
+		width: 80%; margin: 15px 10%;
+	}
 }

@@ -1,8 +1,28 @@
+var Breed = require('./models/breed');
+
 module.exports = function(app, passport) {
 	//Home page with login links
 	app.get('/', function(req, res) {
 		res.render('index.ejs'); //load the index ejs.file
 	});
+
+	app.get('/breeds',function(req,res){
+		Breed.find({},function(err,data){
+			res.send(data);
+		});
+	});
+
+	app.get('/filter/:filter',function(req,res){
+		Breed.find({filters:{$in:[req.params.filter]}},function(err,data){
+			res.send(data);
+		});
+	});
+
+
+
+
+
+//===============LOGIN====================================================
 
 	//show the login form
 	app.get('/login', function(req, res) {
@@ -46,8 +66,8 @@ module.exports = function(app, passport) {
 		res.redirect('/');
 	});
 
-	app.get('/welcome', function(req, res) {
-		res.render('index.html');
+	app.get('/search', function(req, res) {
+		res.render('search.ejs');
 	})
 };
 
