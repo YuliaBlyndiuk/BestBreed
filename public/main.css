@@ -3,10 +3,15 @@ h1 {
 }
 
 .textSection {
-	margin: 10px;
+	margin: 25px;
 	border: 2px solid black;
 	overflow: auto;
 	text-align: justify;
+}
+
+.breedDescr {
+	text-align: justify;
+	overflow: auto;
 }
 
 button {
@@ -16,16 +21,38 @@ button {
 
 p {
 	padding: 15px;
-	/*display: inline-block;*/
 }
 
-.img {
+img {
 	margin: 15px;
 	width: 25%;
+	/*vertical-align: center;*/
 }
 
 @media screen and (max-width: 700px){
 	.img {
 		width: 80%; margin: 15px 10%;
 	}
+}
+
+.searchResult {
+	border: solid black 2px;
+	margin: 15px;
+	padding: 10px;
+	overflow: auto;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.resultImg {
+	vertical-align: top;
+}
+
+.list.highlight {
+	background-color: #d7dee8;
+	width: 100px;
 }

@@ -12,8 +12,8 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	app.get('/filter/:filter',function(req,res){
-		Breed.find({filters:{$in:[req.params.filter]}},function(err,data){
+	app.post('/filter/',function(req,res){
+		Breed.find({filters:{$in:req.body.filters}},function(err,data){
 			res.send(data);
 		});
 	});
@@ -32,7 +32,7 @@ module.exports = function(app, passport) {
 
 	// process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
+        successRedirect : '/search', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -46,7 +46,7 @@ module.exports = function(app, passport) {
 
 	 // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
+        successRedirect : '/search', // redirect to the secure profile section
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
@@ -66,7 +66,7 @@ module.exports = function(app, passport) {
 		res.redirect('/');
 	});
 
-	app.get('/search', function(req, res) {
+	app.get('/search', isLoggedIn, function(req, res) {
 		res.render('search.ejs');
 	})
 };
@@ -77,6 +77,6 @@ function isLoggedIn(req, res, next) {
 	if (req.isAuthenticated())
 		return next();
 	//if not - redirect them to the home page
-	req.redirect('/');
+	res.redirect('/');
 
 }
