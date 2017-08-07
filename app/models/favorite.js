@@ -10,4 +10,4 @@ var favSchema = mongoose.Schema({
 });
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('Breed', breedSchema);
+module.exports = mongoose.model('Favorite', favSchema);

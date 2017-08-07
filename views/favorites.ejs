@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BestBreed Search</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<nav>
+	<ul class="ulNav">
+		<li class="liNav"><a href="/">BestBreed</a></li>
+		<li class="liNav"><a href="/search">Breed Search</a></li>
+		<li class="liNav"><a href="/favorites">Favorite Breeds</a></li>
+	</ul>
+	</nav>
+
+	<h1>Favorite Breeds</h1>
+
+	<% for(var i=0; i<favorites.length; i++){ %>
+		<div class="searchResult"><img class="resultImg" align="right" src="<%=favorites[i].image%>"/><p class="name"><%=favorites[i].breed%></p><p class="breedDescr"><%-favorites[i].description%><br><br><b>Features</b>: <%=favorites[i].filters.join(", ")%></p><button class=".favButton">Remove From Favorites</button></div>
+
+	<% } %>
+
+	<script
+  	src="http://code.jquery.com/jquery-2.2.4.min.js"
+  	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  	crossorigin="anonymous"></script>
+  	<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
 var Breed = require('./models/breed');
+var Favorite = require('./models/favorite');
+
 
 module.exports = function(app, passport) {
 	//Home page with login links
@@ -17,6 +19,36 @@ module.exports = function(app, passport) {
 			res.send(data);
 		});
 	});
+
+	app.get('/favorites',isLoggedIn, function(req,res){
+		Favorite.find({user_id:req.user._id}, function(err,data){
+			var breed_ids = [];
+			for (var i = 0; i < data.length; i++) {
+				breed_ids.push(data[i].breed_id);
+			}
+			Breed.find({_id:{$in:breed_ids}},function(err,breedData){
+				res.render('favorites.ejs',{favorites:breedData});	
+			});
+		})
+	});
+
+	app.post('/favorites', function(req, res) {
+		Favorite.find({user_id:req.user._id,breed_id:req.body.breed_id}, function(err,data){
+			if(data.length){
+				// delete
+				Favorite.remove({user_id:req.user._id,breed_id:req.body.breed_id}, function(err,data){
+					res.send(204);
+				});
+			} else {
+				// create new favorite
+				Favorite.create({user_id:req.user._id, breed_id:req.body.breed_id},function(err,data){
+					res.send(200);
+				});
+			}
+		});
+	})
+
+
 
 
 

@@ -44,14 +44,14 @@ console.log('using ' + port);
 
 app.use(express.static('public'));
 
-app.get('/search', function(req, res) {
-	res.status(200);
-	res.send('search page');
-})
+// app.get('/search', function(req, res) {
+// 	res.status(200);
+// 	res.send('search page');
+// })
 
-app.get('/result', function(req, res) {
-	res.status(200);
-	res.send('result page');
-})
+// app.get('/result', function(req, res) {
+// 	res.status(200);
+// 	res.send('result page');
+// })
 
 module.exports = {app};

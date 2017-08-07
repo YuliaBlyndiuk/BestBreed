@@ -56,3 +56,33 @@ img {
 	background-color: #d7dee8;
 	width: 100px;
 }
+
+.ulNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e6e8ed;
+}
+
+.liNav {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.liNav:last-child {
+    border-right: none;
+}
+
+.liNav a {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.favButton, .favList {
+	display: inline-block;
+}
