@@ -70,7 +70,6 @@ $(document).ready(function(){
 	});
 
 	$('body').on('click','.favButton',function(){
-		console.log('clicked');
 		var $result = $(this).parent();
 		$.ajax({
 			url: '/favorites',
