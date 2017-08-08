@@ -15,9 +15,9 @@ function displayAllData(state){
 
 	var allBreeds = '';
 	var header = '<nav><ul class="ulNav"><li class="liNav"><a href="/">BestBreed</a></li><li class="liNav"><a href="/search">Breed Search</a></li><li class="liNav"><a href="/favorites">Favorite Breeds</a></li></ul></nav><h1>Selected Breeds</h1>';
-	var returnToSearch = '<form action="/search"><button type="submit" value="Return to Search">Return to Search</button></form>';
-	var favButton = '<button class="favButton">Add To Favorites</button>';
-	var favList = '<form class="favList" action="/favorites"><button type="submit" value="See My Favorites">See My Favorites</button></form>';
+	var returnToSearch = '<form action="/search"><button type="submit" class="btn btn-default" value="Return to Search">Return to Search</button></form>';
+	var favButton = '<button class="favButton btn btn-default" >Add To Favorites</button>';
+	var favList = '<form class="favList" action="/favorites"><button class="btn btn-default" type="submit" value="See My Favorites">See My Favorites</button></form>';
 
 	for (var i = 0; i<state.breeds[0].length; i++ ) {
 		var breedName = state.breeds[0][i].breed;
@@ -70,14 +70,15 @@ $(document).ready(function(){
 	});
 
 	$('body').on('click','.favButton',function(){
+		console.log('clicked');
+		var $result = $(this).parent();
 		$.ajax({
 			url: '/favorites',
 			method: 'post',
-			data: {breed_id:$(this).parent().attr('data-breed')}
+			data: {breed_id: $result.attr('data-breed')}
 		}).done(function(data){
-			// add conditional to see if you added or removed a favorite
-			if (data.length){
-				
+			if($result.hasClass('favoriteResult')){
+				$result.remove();
 			}
 		});
 	});

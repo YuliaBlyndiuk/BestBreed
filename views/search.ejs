@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>BestBreed Search</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-
-<body>
-	<nav>
-	<ul class="ulNav">
-		<li class="liNav"><a href="/">BestBreed</a></li>
-		<li class="liNav"><a href="/search">Breed Search</a></li>
-		<li class="liNav"><a href="/favorites">Favorite Breeds</a></li>
-	</ul>
-	</nav>
+<% include partials/header %>
 
 	<h1>Breed Search</h1>
 
@@ -23,7 +7,7 @@
 		<p>All the puppies are cute. We doubt anybody would dare to question it. <br> Though when one gets a pup of their own, one should realize the responsibility over that creature that can last over a decade. It's very important not to follow emotions and get an animal that you cannot make happy due to any reason possible (some dogs grow huge, require proper grooming, are difficult to be trained, need tonnes of exercise, etc.) <br> That's why we have created BestBreed that allows to select the right breed based on its main characteristics. You can start with an overview of all TOP 100 dog breeds popular in the USA. 
 		</p>
 		
-		<button id="seeAll">See All Breeds</button>
+		<button class="btn btn-default" id="seeAll">See All Breeds</button>
 	</div>
 
 	<div class="textSection">
@@ -43,14 +27,7 @@
 			<li class="list" data-name='fearless'>Fearless</li>
 		</ul>
 
-		<button class="filter-search">Search</button>	
+		<button class="btn btn-default" class="filter-search">Search</button>	
 	</div>
 
-	<script
-  	src="http://code.jquery.com/jquery-2.2.4.min.js"
-  	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  	crossorigin="anonymous"></script>
-  	<script src="js/app.js"></script>
-
-</body>
-</html>
+<% include partials/footer %>
