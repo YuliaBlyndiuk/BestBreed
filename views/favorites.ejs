@@ -3,7 +3,12 @@
 	<h1>Favorite Breeds</h1>
 
 	<% for(var i=0; i<favorites.length; i++){ %>
-		<div class="searchResult favoriteResult" data-breed="<%=favorites[i]._id%>"><img class="resultImg" align="right" src="<%=favorites[i].image%>"/><p class="name"><%=favorites[i].breed%></p><p class="breedDescr"><%-favorites[i].description%><br><br><b>Features</b>: <%=favorites[i].filters.join(", ")%></p><button class="btn btn-default" class="favButton">Remove From Favorites</button></div>
-
+		<div class="searchResult favoriteResult" data-breed="<%=favorites[i]._id%>"><img class="resultImg" align="right" src="<%=favorites[i].image%>"/><p class="name"><%=favorites[i].breed%></p><p class="breedDescr"><%-favorites[i].description%><br><br><b>Features</b>: <%=favorites[i].filters.join(", ")%></p><button class="favButton">Remove From Favorites</button></div>
 	<% } %>
+
+	<%	if(favorites.length === 0) {%>
+			<p>You haven't added favorite breeds yet.</p>
+	<%	}%>
+
+	
 <% include partials/footer %>
