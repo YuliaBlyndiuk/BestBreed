@@ -36,6 +36,9 @@ p {
 	.img {
 		width: 80%; margin: 15px 10%;
 	}
+	#introText h2 {
+		display: none;
+	}
 }
 
 .searchResult {
@@ -92,6 +95,20 @@ p {
 	display: inline-block;
 }
 
-.favoriteResult {
-	
+#image {
+	position: relative;
+	width: 100%
+}
+
+#introText {
+	position: absolute;
+	width: 100%;
+	bottom: 0px; 
+    left: 0; 
+    color: white; 
+    font: bold 24px/45px; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px; 
 }
