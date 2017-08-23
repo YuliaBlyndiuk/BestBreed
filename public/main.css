@@ -4,10 +4,13 @@ h1 {
 }
 
 .textSection {
-	margin: 25px;
+	margin: 30px;
 	border: 2px solid black;
 	overflow: auto;
 	text-align: justify;
+	font-size: 16px;
+	padding: 20px;
+	line-height: 150%
 }
 
 .breedDescr {
@@ -28,7 +31,7 @@ p {
 }
 
 .textSection img {
-	margin: 15px;
+	margin: 20px;
 	width: 25%;
 }
 
@@ -112,3 +115,4 @@ p {
     background: rgba(0, 0, 0, 0.3);
     padding: 10px; 
 }
+

@@ -34,7 +34,6 @@ function displayAllData(state){
 
 $(document).ready(function(){
 	$('#seeAll').click(function(){
-		console.log('I got clicked');
 		$.ajax({
 			url: '/breeds',
 			method: 'get'
