@@ -1,3 +1,7 @@
+/*html {
+	background: url(images/login.jpg) no-repeat center center fixed;
+}*/
+
 h1 {
 	text-align: center;
 	margin: 30px;
@@ -64,7 +68,7 @@ p {
 }
 
 .list.highlight {
-	background-color: #c3c6cc;
+	background-color: #4d81d6;
 	width: 100px;
 }
 
@@ -102,12 +106,13 @@ p {
 	position: relative;
 	width: 100%
 	height: 100%;
+	background-size:cover;
 }
 
 #introText {
 	position: absolute;
 	width: 100%;
-	bottom: 0px; 
+	top: 0px; 
     left: 0; 
     color: white; 
     font: bold 24px/45px; 
@@ -116,4 +121,16 @@ p {
     background: rgba(0, 0, 0, 0.3);
     padding: 10px; 
 }
+
+.filterList { 
+	text-align: center;
+ }
+
+ .list {
+ 	display: inline-block;
+ 	padding: 7px;
+ 	border-radius: 3px;
+ 	border: solid #c6d7f2 1px;
+ 	margin: 5px;
+ }
 
