@@ -1,17 +1,24 @@
 <% include partials/header %>
 
 		<div id="image">
-   			 <img class="center-block img-responsive" src="/images/login.jpg" />
+   		 <img id="indexImage" src="/images/login.jpg" />
+       <!-- class="center-block img-responsive" -->
 
-    		<div class="jumbotron text-center" id="introText">
 
-        		<h1><span class="fa"></span> BestBreed</h1>
+    	<div  id="TextBoxOverImage">
 
-        		<h2>Find a dog breed that would fit your lifestyle the best!</h2>
+        <h1>BestBreed</h1>
+        <h2>Find a dog breed that would fit your lifestyle the best!</h2>
 
-        		<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
-       	 		<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
-   		 	</div>
-   		 </div>
+        <div class="indexButtonDiv">
+
+          <form class="indexForm" action="/signup"><button type="submit" >Signup</button></form>
+
+          <form class="indexForm" action="/login"><button type="submit" >Login</button></form>
+
+        </div>  
+
+   		</div>
+   	</div>
 	</body>
 </html>

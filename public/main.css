@@ -1,11 +1,71 @@
-/*html {
-	background: url(images/login.jpg) no-repeat center center fixed;
-}*/
+/*navigation*/
 
-h1 {
-	text-align: center;
-	margin: 30px;
+.ulNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6bbc47;
 }
+
+.liNav {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.liNav:last-child {
+    border-right: none;
+}
+
+.liNav a {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
+
+/*index page*/
+
+h1, h2 {
+	text-align: center;
+	margin: 40px;
+}
+
+/*intro page*/
+
+ .indexButtonDiv {
+ 	text-align: center;	
+ }
+
+ .indexForm {
+ 	display: inline-block;
+ 	padding: 5px;
+ 	font-size: 16px;
+ }
+
+ #image {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#TextBoxOverImage{
+	position: absolute;
+	width: 100%;
+	top: 0px; 
+    left: 0; 
+    color: white; 
+    font: bold 24px/45px; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px; 
+}
+
+/*search page*/
 
 .textSection {
 	margin: 30px;
@@ -26,8 +86,9 @@ button {
 	margin-left: 15px;
 	margin-bottom: 20px;
 	padding: 5px 15px 5px 15px;
-	background-color: #7ec4f7;
-	border-radius: 2px;
+	background-color: #6bbc47;
+	border-radius: 5px;
+	font-size: 16px;
 }
 
 p {
@@ -45,6 +106,9 @@ p {
 	}
 	#introText h2 {
 		display: none;
+	}
+	#image {
+		height: 100%;
 	}
 }
 
@@ -68,58 +132,12 @@ p {
 }
 
 .list.highlight {
-	background-color: #4d81d6;
+	background-color: #6bbc47;
 	width: 100px;
-}
-
-.ulNav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #7ec4f7;
-}
-
-.liNav {
-    float: left;
-    border-right: 1px solid #bbb;
-}
-
-.liNav:last-child {
-    border-right: none;
-}
-
-.liNav a {
-    display: block;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
 }
 
 .favButton, .favList {
 	display: inline-block;
-}
-
-#image {
-	position: relative;
-	width: 100%
-	height: 100%;
-	background-size:cover;
-}
-
-#introText {
-	position: absolute;
-	width: 100%;
-	top: 0px; 
-    left: 0; 
-    color: white; 
-    font: bold 24px/45px; 
-    letter-spacing: -1px;  
-    background: rgb(0, 0, 0); 
-    background: rgba(0, 0, 0, 0.3);
-    padding: 10px; 
 }
 
 .filterList { 
@@ -130,7 +148,6 @@ p {
  	display: inline-block;
  	padding: 7px;
  	border-radius: 3px;
- 	border: solid #c6d7f2 1px;
+ 	border: solid #6bbc47 1px;
  	margin: 5px;
  }
-
